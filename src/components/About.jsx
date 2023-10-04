@@ -15,13 +15,16 @@ const About = () => {
     <section id="about" className=" section" ref={ref}>
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-10 lg:flex-row items-center lg:gap-x-20 lg:gap-y-0 h-screen" > 
-          {/* Image */}
-          {/* <div className="flex-1 bg-about bg-contain bg-no-repeat h-[640px] mix-blend-lighten bg-top">
-            {/* <img src="" alt="" />*/}
-          {/* </div>  */}
-          {/* text */}
-          <motion.div className="flex-1"
+          {/* Image */} 
+          <motion.div className="flex-1 bg-about bg-contain bg-no-repeat h-[640px] mix-blend-lighten bg-top"
           variants={fadeIn("up", 0.5)}
+          initial="hidden"
+          whileInView={"show"}>
+            <img src="" alt="" />
+          </motion.div> 
+           {/* text */}
+          <motion.div className="flex-1"
+          variants={fadeIn("down", 0.5)}
           initial="hidden"
           whileInView={"show"}>
             <h2 className=" h2 text-accent"
