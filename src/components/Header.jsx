@@ -8,10 +8,16 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* logo */}
           <a href="#"></a>
-          <img src={Logo} alt="" width={60}/>
+          <img src={Logo} alt="" width={60} />
           {/* boton */}
         </div>
+        <a
+          href="https://drive.google.com/file/d/1H1MzHUEjCHVqPzOOfYolavQqJZ8doXcb/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <button className=" btn btn-sm">Descargar CV</button>
+        </a>
       </div>
     </header>
   );
