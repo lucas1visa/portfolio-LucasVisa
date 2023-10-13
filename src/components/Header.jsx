@@ -15,8 +15,9 @@ const Header = () => {
           href="https://drive.google.com/file/d/1H1MzHUEjCHVqPzOOfYolavQqJZ8doXcb/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
+
         >
-          <button className=" btn btn-sm">Descargar CV</button>
+          <button className=" btn btn-sm">Descargar  CV</button>
         </a>
       </div>
     </header>
