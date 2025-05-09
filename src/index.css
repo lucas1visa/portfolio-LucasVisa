@@ -2,35 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Actualización de gradientes para mantener coherencia con los componentes mejorados */
 .btn {
   background: linear-gradient(
     92.23deg,
-    #09a3ad 21.43%,
-    #36802d 50.63%,
-    #77ab59 100%,
-    #c9df8a 117.04%
+    #06b6d4 21.43%, /* cyan-500 */
+    #8b5cf6 50.63%, /* purple-500 */
+    #a855f7 100%    /* purple-600 */
   );
-  box-shadow: 0px 4.42184px 107.23px rgba(86, 204, 255, 0.51);
+  box-shadow: 0px 4px 10px rgba(6, 182, 212, 0.35);
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
   background: linear-gradient(
     92.23deg,
-    #c9df8a 21.43%,
-    #77ab59 50.63%,
-    #36802d 100%,
-    #09a3ad 117.04%
+    #a855f7 21.43%, /* purple-600 */
+    #8b5cf6 50.63%, /* purple-500 */
+    #06b6d4 100%    /* cyan-500 */
   );
+  box-shadow: 0px 4px 15px rgba(139, 92, 246, 0.45);
+  transform: translateY(-2px);
 }
 
 .gradient,
 .active {
   background: linear-gradient(
     92.23deg,
-    #09a3ad 21.43%,
-    #77ab59 50.63%,
-    #36802d 100%,
-    #09a3ad 117.04%
+    #06b6d4 21.43%, /* cyan-500 */
+    #8b5cf6 50.63%, /* purple-500 */
+    #a855f7 100%    /* purple-600 */
   );
 }
 
@@ -40,32 +41,91 @@
   border-radius: 100%;
 }
 
+/* Efectos de animación para elementos */
+@keyframes pulse-light {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse-animation {
+  animation: pulse-light 3s infinite;
+}
+
+/* Estilos de glassmorphism */
+.glass-effect {
+  @apply bg-gray-900/70 backdrop-blur-md border border-white/10;
+}
+
 @layer base {
   body {
-    @apply font-secondary text-lg leading-8 text-white;
+    @apply font-secondary text-lg leading-8 text-white bg-gradient-to-b from-gray-900 to-gray-800;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-primary tracking-wide;
+  }
+  
   .h2 {
-    @apply font-primary text-[32px] mb-6 tracking-[10%] uppercase;
+    @apply font-primary text-[32px] mb-6 uppercase;
   }
+  
   .h3 {
     @apply font-primary font-semibold text-[26px] mb-6 leading-[46px];
   }
+  
   .btn {
-    @apply rounded-full font-primary text-white font-medium;
+    @apply rounded-xl font-primary text-white font-medium transition-all duration-300;
   }
+  
   .btn-sm {
     @apply h-[48px] px-6 text-sm;
   }
+  
   .btn-lg {
     @apply h-[56px] px-10 text-base;
   }
+  
   .btn-link {
     @apply text-base;
   }
+  
   .text-gradient {
-    @apply bg-gradient-to-r text-transparent bg-clip-text from-[#42A6E3] to-[#36802d] font-bold font-primary hover:from-[#36802d] hover:to-[#42A6E3];
+    @apply bg-gradient-to-r text-transparent bg-clip-text from-cyan-400 to-purple-600 font-bold font-primary 
+      hover:from-purple-600 hover:to-cyan-400 transition-all duration-300;
   }
+  
   .section {
-    @apply py-8 lg:py-24 lg:h-screen flex items-center;
+    @apply py-8 lg:py-24 lg:min-h-screen flex items-center;
   }
+}
+
+/* Efectos de hover y focus mejorados */
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-opacity-50;
+}
+
+/* Estilos para tarjetas */
+.card {
+  @apply bg-gray-800/30 backdrop-blur-sm rounded-xl border border-white/5 shadow-lg transition-all duration-300;
+}
+
+.card:hover {
+  @apply border-cyan-500/20 shadow-cyan-500/10;
+}
+
+/* Animaciones para íconos tecnológicos */
+.tech-icon {
+  @apply transition-all duration-300;
+}
+
+.tech-icon:hover {
+  @apply transform -translate-y-1;
 }

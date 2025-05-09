@@ -10,7 +10,7 @@ import Contact from './components/Contact';
 
 const App = () => {
   return (
-    <div className='bg-site bg-no-repeat bg-cover overflow-hidden'>
+    <div className='bg-site bg-no-repeat bg-cover bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden'>
       <Header />
       <Banner />
       <Nav />
@@ -18,9 +18,10 @@ const App = () => {
       <Services />
       <Work />
       <Contact />
-      {/* <div className='h-[100px]'></div> */}
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/5 pointer-events-none"></div>
     </div>
   );
 };
 
 export default App;
+
